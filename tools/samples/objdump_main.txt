@@ -1,0 +1,13 @@
+0000000000001060 <main>:
+    1060:	sub    $0x18,%rsp
+    1064:	call   11a0 <now>
+    1069:	movsd  %xmm0,0x8(%rsp)
+    106f:	call   11a0 <now>
+    1074:	subsd  0x8(%rsp),%xmm0
+    107a:	mov    $0x1,%eax
+    107f:	movabs $0x6f05b59b5e49b00,%rsi
+    1089:	lea    0xf74(%rip),%rdi        # 2004 <_IO_stdin_used+0x4>
+    1090:	call   1050 <printf@plt>
+    1095:	xor    %eax,%eax
+    1097:	add    $0x18,%rsp
+    109b:	ret

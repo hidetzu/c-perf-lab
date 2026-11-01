@@ -1,0 +1,5 @@
+$ time ./01-aggregate/v0 < sales6m.csv > /dev/null   (bash の組み込み time。env の LANG により表記が変わる)
+
+real	0m0.871s
+user	0m0.801s
+sys	0m0.068s

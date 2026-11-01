@@ -1,0 +1,12 @@
+    23.37%  v0s      v0s               [.] __strspn_sse42
+    16.44%  v0s      v0s               [.] ____strtod_l_internal
+    13.18%  v0s      v0s               [.] __strtok_r
+    11.73%  v0s      v0s               [.] __strcspn_sse42
+     8.43%  v0s      v0s               [.] ____strtoll_l_internal
+     4.66%  v0s      v0s               [.] str_to_mpn.part.0.constprop.0
+     2.81%  v0s      v0s               [.] round_and_return
+     2.23%  v0s      v0s               [.] _IO_getline_info
+     2.23%  v0s      v0s               [.] __memmove_avx_unaligned_erms
+     2.21%  v0s      v0s               [.] __memchr_avx2
+     2.13%  v0s      v0s               [.] _IO_fgets
+     1.84%  v0s      v0s               [.] __mpn_lshift

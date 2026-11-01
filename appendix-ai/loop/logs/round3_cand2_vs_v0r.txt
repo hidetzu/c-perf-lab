@@ -1,0 +1,14 @@
+1. 通常入力の出力一致     PASS
+    異常系 amount_14_digits.csv: 出力が基準と違う
+    異常系 comma_at_eof_no_newline.csv: 異常終了 (rc=1)
+    sanitizer comma_at_eof_no_newline.csv: ==569053==ERROR: AddressSanitizer: requested allocation size 0xffffffffffffffec (0x7f0 after adjustments for alignment, red zones etc.) exceeds maximum supported size of 0x10000000000 (thread T0)
+    異常系 comma_at_line_end.csv: 異常終了 (rc=1)
+    sanitizer comma_at_line_end.csv: ==569061==ERROR: AddressSanitizer: requested allocation size 0xffffffffffffffe9 (0x7f0 after adjustments for alignment, red zones etc.) exceeds maximum supported size of 0x10000000000 (thread T0)
+    異常系 fuzz.csv: 異常終了 (rc=1)
+    sanitizer fuzz.csv: appendix-ai/ai_cand2.c:18:58: runtime error: signed integer overflow: 999999999 * 10 cannot be represented in type 'int'
+    sanitizer store_11_digits.csv: appendix-ai/ai_cand2.c:18:58: runtime error: signed integer overflow: 999999999 * 10 cannot be represented in type 'int'
+    異常系 store_negative.csv: 出力が基準と違う
+2./3. 異常系 20 件 + sanitizer FAIL: 9 件で問題
+4. 速さ (中央値 ms)           基準 490 / 候補 143 (基準比 3.43 倍)
+   基準比 10% 以上速い      PASS
+不採用 (人が理由を読む)

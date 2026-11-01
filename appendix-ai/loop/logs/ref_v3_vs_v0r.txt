@@ -1,0 +1,37 @@
+1. 通常入力の出力一致     PASS
+    異常系 amount_14_digits.csv: 出力が基準と違う
+    異常系 amount_negative.csv: 出力が基準と違う
+appendix-ai/eval.sh: 24 行: 569294 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 amount_no_decimal.csv: 異常終了 (rc=139)
+    sanitizer amount_no_decimal.csv: 01-aggregate/v3_block.c:28:36: runtime error: signed integer overflow: 7666666666666666672 * 10 cannot be represented in type 'long long int'
+    異常系 amount_one_decimal.csv: 出力が基準と違う
+    sanitizer comma_at_eof_no_newline.csv: 01-aggregate/v3_block.c:32:18: runtime error: index 5701 out of bounds for type 'long long int [1000]'
+    異常系 comma_at_line_end.csv: 出力が基準と違う
+    sanitizer comma_at_line_end.csv: 01-aggregate/v3_block.c:32:18: runtime error: index 2026 out of bounds for type 'long long int [1000]'
+appendix-ai/eval.sh: 24 行: 569341 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 crlf.csv: 異常終了 (rc=139)
+    sanitizer crlf.csv: ==569352==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000002 (pc 0x5597f535d84f bp 0x5597f5361ca0 sp 0x7ffc19c49d90 T0)
+appendix-ai/eval.sh: 24 行: 569364 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 extra_field.csv: 異常終了 (rc=139)
+    sanitizer extra_field.csv: ==569374==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000002 (pc 0x55d4501db84f bp 0x55d4501dfca0 sp 0x7ffc48731fa0 T0)
+appendix-ai/eval.sh: 24 行: 569380 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 fuzz.csv: 異常終了 (rc=139)
+    sanitizer fuzz.csv: 01-aggregate/v3_block.c:28:36: runtime error: signed integer overflow: -3080498954909143943 * 10 cannot be represented in type 'long long int'
+    異常系 header.csv: 出力が基準と違う
+    sanitizer header.csv: 01-aggregate/v3_block.c:28:36: runtime error: signed integer overflow: 5580584220257007006 * 10 cannot be represented in type 'long long int'
+    異常系 huge_line.csv: 異常終了 (rc=1)
+    sanitizer huge_line.csv: 
+appendix-ai/eval.sh: 24 行: 569413 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 long_line.csv: 異常終了 (rc=139)
+    sanitizer long_line.csv: ==569424==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7ff42d9759a4 bp 0x7fff382fa170 sp 0x7fff382f9908 T0)
+    異常系 no_newline_one_line.csv: 異常終了 (rc=1)
+    sanitizer no_newline_one_line.csv: 
+    sanitizer store_11_digits.csv: 01-aggregate/v3_block.c:32:18: runtime error: index 9999 out of bounds for type 'long long int [1000]'
+appendix-ai/eval.sh: 24 行: 569460 Segmentation fault         timeout 10 "$W/cand" < "$f" > "$W/c.txt" 2> /dev/null
+    異常系 store_negative.csv: 異常終了 (rc=139)
+    sanitizer store_negative.csv: 01-aggregate/v3_block.c:32:18: runtime error: index -2808 out of bounds for type 'long long int [1000]'
+    sanitizer store_out_of_range.csv: 01-aggregate/v3_block.c:32:18: runtime error: index 1000 out of bounds for type 'long long int [1000]'
+2./3. 異常系 20 件 + sanitizer FAIL: 26 件で問題
+4. 速さ (中央値 ms)           基準 487 / 候補 101 (基準比 4.82 倍)
+   基準比 10% 以上速い      PASS
+不採用 (人が理由を読む)

@@ -1,0 +1,8 @@
+# 2 周目: AI が自己申告した「1MiB 超の行はエラー終了」を入力 (huge_line.csv) に加えて cand1 を再評価
+1. 通常入力の出力一致     PASS
+    異常系 huge_line.csv: rc=1 で 出力が基準と違う
+    sanitizer huge_line.csv: 
+2./3. 異常系 13 件 + sanitizer FAIL: 2 件で問題
+4. 速さ (中央値 ms)           基準 758 / 候補 137 (基準比 5.53 倍)
+   基準比 10% 以上速い      PASS
+不採用 (人が理由を読む)

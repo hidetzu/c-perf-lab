@@ -1,0 +1,10 @@
+## ファイルシステム: ext4  デバイス: /dev/nvme0n1p2   ファイル: 197333917 バイト
+cnt_read 65536     cold: 124(u29,s27) 124(u34,s21) 105(u21,s35) 108(u36,s20) 103(u23,s32)
+cnt_read 65536     warm: 40(u27,s12) 40(u29,s11) 40(u25,s14) 40(u24,s16) 40(u24,s15)
+cnt_read 4096      cold: 114(u25,s45) 116(u26,s45) 109(u40,s30) 131(u29,s43) 117(u31,s40)
+cnt_read 4096      warm: 55(u28,s28) 55(u29,s26) 55(u28,s27) 55(u25,s30) 55(u33,s22)
+cnt_read 1048576   cold: 141(u32,s25) 120(u32,s24) 113(u29,s26) 134(u28,s30) 120(u30,s26)
+cnt_read 1048576   warm: 39(u37,s1) 39(u28,s11) 39(u38,s0) 39(u36,s2) 39(u17,s21)
+cnt_mmap           cold: 101(u29,s22) 126(u39,s15) 110(u40,s12) 100(u32,s19) 124(u29,s24)
+cnt_mmap           warm: 34(u32,s2) 35(u29,s5) 34(u32,s2) 34(u29,s5) 35(u32,s3)
+(wall ms、括弧内は user/sys ms。cold = 毎回 drop_caches 直後。先読みの設定は readahead_kb: 128)

@@ -1,0 +1,11 @@
+
+ Performance counter stats for 'bash -c taskset -c 2 ./01-aggregate/v3 < sales6m.csv > /dev/null' (5 runs):
+
+            100.91 msec task-clock:u                                                            ( +-  0.63% )
+       358,928,335      cycles:u                                                                ( +-  0.04% )
+       821,591,122      instructions:u                                                          ( +-  0.00% )
+           748,923      branch-misses:u                                                         ( +-  0.01% )
+           139,766      cache-misses:u                                                          ( +-  3.16% )
+
+       0.101328533 +- 0.000627376 seconds time elapsed  ( +-  0.62% )
+

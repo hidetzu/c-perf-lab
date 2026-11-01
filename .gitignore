@@ -1,0 +1,29 @@
+# build_all.sh の生成物（ELF）
+/tools/runstat
+/00-harness/sum_*
+!/00-harness/sum_*.c
+/00-harness/ub_overflow
+/00-harness/ub_overflow_wrapv
+/01-aggregate/gen
+/01-aggregate/v[0-9]*
+!/01-aggregate/v*.c
+/02-io/*
+!/02-io/*.c
+!/02-io/*.h
+!/02-io/*.sh
+/03-string/sc_*
+/04-join/gen_join
+/04-join/j[0-9]*
+!/04-join/j*.c
+/05-cache/*
+!/05-cache/*.c
+!/05-cache/*.h
+!/05-cache/*.sh
+/06-branch/branch
+/06-branch/branch_nocmov
+/07-wait/w[0-9]
+# 入力データ・作業ディレクトリ
+*.csv
+work_dir/
+out_dir/
+__pycache__/

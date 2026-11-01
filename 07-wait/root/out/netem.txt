@@ -1,0 +1,18 @@
+## 遅延なし (基準)
+tcp seq       200件 wall 4 ms  user 1 ms  sys 2 ms  
+tcp pipeline  200件 wall 1 ms  user 0 ms  sys 1 ms  
+x.invalid      n=40 threads=1  全体 5.5 ms  (1 回あたり 0.14 ms)
+x.invalid      n=40 threads=8  全体 4.1 ms  (1 回あたり 0.10 ms)
+seq       n=50  応答 50 失 0  全体 1.6 ms  (1 件あたり 0.03 ms)  server=127.0.0.53 name=x.invalid
+pipeline  n=50  応答 50 失 0  全体 1.2 ms  (1 件あたり 0.02 ms)  server=127.0.0.53 name=x.invalid
+## lo に netem delay 2ms (往復で約 4 ms)
+qdisc netem 8002: root refcnt 2 limit 1000 delay 2ms seed 10878080472397405703
+tcp seq       200件 wall 813 ms  user 1 ms  sys 2 ms  
+tcp pipeline  200件 wall 19 ms  user 1 ms  sys 0 ms  
+x.invalid      n=40 threads=1  全体 4.8 ms  (1 回あたり 0.12 ms)
+x.invalid      n=40 threads=8  全体 4.2 ms  (1 回あたり 0.11 ms)
+localhost      n=40 threads=1  全体 7.1 ms  (1 回あたり 0.18 ms)
+seq       n=50  応答 50 失 0  全体 204.4 ms  (1 件あたり 4.09 ms)  server=127.0.0.53 name=x.invalid
+pipeline  n=50  応答 50 失 0  全体 5.1 ms  (1 件あたり 0.10 ms)  server=127.0.0.53 name=x.invalid
+(w4 = getaddrinfo。この環境では nss-resolve が systemd-resolved と Unix ソケットで話すので lo の遅延が効かない。w5 = スタブリゾルバへ UDP で直接問い合わせるので lo の遅延が効く)
+## netem を外した: qdisc noqueue 0: root refcnt 2 

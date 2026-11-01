@@ -1,0 +1,11 @@
+# 1 周目: cand1 を基準 v2c（不正行を読み飛ばす版）で評価した出力（入力 12 種。当時の eval.sh）
+1. 通常入力の出力一致     PASS
+    異常系 amount_negative.csv: rc=0 で 出力が基準と違う
+    異常系 amount_no_decimal.csv: rc=0 で 出力が基準と違う
+    異常系 amount_one_decimal.csv: rc=0 で 出力が基準と違う
+    異常系 extra_field.csv: rc=0 で 出力が基準と違う
+    異常系 long_line.csv: rc=0 で 出力が基準と違う
+2./3. 異常系 12 件 + sanitizer FAIL: 5 件で問題
+4. 速さ (中央値 ms)           基準 188 / 候補 136 (基準比 1.38 倍)
+   基準比 10% 以上速い      PASS
+不採用 (人が理由を読む)

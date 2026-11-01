@@ -1,0 +1,13 @@
+1. 通常入力の出力一致     PASS
+    異常系 amount_14_digits.csv: 出力が基準と違う
+    異常系 amount_negative.csv: 出力が基準と違う
+    異常系 amount_no_decimal.csv: 出力が基準と違う
+    異常系 amount_one_decimal.csv: 出力が基準と違う
+    異常系 extra_field.csv: 出力が基準と違う
+    異常系 fuzz.csv: 出力が基準と違う
+    異常系 huge_line.csv: 出力が基準と違う
+    異常系 long_line.csv: 出力が基準と違う
+2./3. 異常系 20 件 + sanitizer FAIL: 8 件で問題
+4. 速さ (中央値 ms)           基準 487 / 候補 183 (基準比 2.66 倍)
+   基準比 10% 以上速い      PASS
+不採用 (人が理由を読む)
